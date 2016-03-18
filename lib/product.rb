@@ -1,6 +1,7 @@
 class Product
 
-  attr_reader :title, :price, :stock
+  attr_reader :title, :price
+  attr_accessor :stock
 
   @@products = []
 
@@ -47,7 +48,6 @@ class Product
     return is_there
   end
 
-
   private
 
   def add_to_products
@@ -58,9 +58,9 @@ class Product
       test = @@products[index]
       if(test.title == @title)
         begin
-          raise DuplicateProductError.new(@title), " already exists (DuplicateProductError)."
+          raise DuplicateProductError.new(@title), " already exists."
         rescue DuplicateProductError => p
-          puts p.object + p.message
+          puts "DuplicateProductError: " + p.object + p.message
         end
         index = stop
         it_is = false

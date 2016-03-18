@@ -24,6 +24,12 @@ class Customer
     end
   end
 
+  def purchase(product)
+
+    Transaction.new(self.name, product)
+
+  end
+
   private
 
   def add_to_customers
@@ -32,9 +38,9 @@ class Customer
     while(index < @@customers.length)
       if(@@customers[index].name == @name)
         begin
-          raise DuplicateCustomerError.new(@name), " already exists (DuplicateCustomerError)."
+          raise DuplicateCustomerError.new(@name), " already exists."
         rescue DuplicateCustomerError => p
-          puts p.object + p.message
+          puts "DuplicateCustomerError: " + p.object + p.message
         end
         index = @@customers.length
         it_is = false

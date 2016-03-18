@@ -17,3 +17,13 @@ class DuplicateCustomerError < StandardError
   end
 
 end
+
+class OutOfStockError < StandardError
+
+  attr_reader :object
+
+  def initialize(object)
+    @object = object
+  end
+
+end
