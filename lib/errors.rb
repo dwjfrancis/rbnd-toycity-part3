@@ -27,3 +27,13 @@ class OutOfStockError < StandardError
   end
 
 end
+
+class NoUserError < StandardError
+
+  attr_reader :object
+
+  def initialize(object)
+    @object = object
+  end
+
+end

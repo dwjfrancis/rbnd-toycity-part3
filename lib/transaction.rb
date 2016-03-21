@@ -22,7 +22,6 @@ class Transaction
     while(index < @@transactions.length)
       if(@@transactions[index].id == number_in)
         return @@transactions[index]
-
       else
         index += 1
       end
@@ -33,7 +32,6 @@ class Transaction
 
   def add_to_transactions
     id = @@transactions.length
-
     how_many = @product.stock
     if(how_many < 1)
       begin
@@ -47,7 +45,5 @@ class Transaction
       @@transactions << self
     end
   end
-
-
 
 end
