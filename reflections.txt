@@ -1,0 +1,10 @@
+the toycity part 3 project took me probably about 20 hours.
+I had difficulty with a few things such as the version of Ruby I was using and 
+how to create error messages correctly.  Fortunately Google is there.
+
+the two extras I placed in were to return a product which still gives an error if there are none
+in stock when it is returned and an error when tring to find a customer that does not yet
+exist.
+
+When I logged onto the site I found that I was put back to project 1.  
+Waiting for that to get fixed.
