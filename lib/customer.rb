@@ -15,13 +15,16 @@ class Customer
 
   def self.find_by_name(name_in)
     index = 0
-    while(index < @@customers.length)
-      if(@@customers[index].name == name_in)
-        return @@customers[index]
-      else
-        index += 1
-      end
+    @@customers.each {|customer| return customer if (customer.name == name_in)}
+      index += 1
     end
+#    while(index < @@customers.length)
+#      if(@@customers[index].name == name_in)
+#        return @@customers[index]
+#      else
+#        index += 1
+#      end
+#    end
     if(index == @@customers.length)
       begin
         raise NoUserError.new(name_in), " does not exist."

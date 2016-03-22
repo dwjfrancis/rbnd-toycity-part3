@@ -8,3 +8,7 @@ exist.
 
 When I logged onto the site I found that I was put back to project 1.  
 Waiting for that to get fixed.
+
+Where do i have to grow - well with this need more exposure to rubygems,
+system calls, web development (ruby on rails) and get more used to doing
+things in Ruby style with less space and more done.
