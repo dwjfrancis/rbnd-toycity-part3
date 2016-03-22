@@ -15,7 +15,6 @@ class Customer
 
   def self.find_by_name(name_in)
     index = 0
-    name = name_in
     while(index < @@customers.length)
       if(@@customers[index].name == name_in)
         return @@customers[index]
@@ -23,13 +22,13 @@ class Customer
         index += 1
       end
     end
-      if(index == @@customers.length)
-        begin
-          raise NoUserError.new(name), " does not exist."
-        rescue NoUserError => p
-          puts "NoUserError: " + p.object + p.message
-        end
-     end
+    if(index == @@customers.length)
+      begin
+        raise NoUserError.new(name_in), " does not exist."
+      rescue NoUserError => p
+        puts "NoUserError: " + p.object + p.message
+      end
+    end
   end
 
   def purchase(product)
@@ -40,7 +39,6 @@ class Customer
 
   def return(product)
     
-    Transaction.new(self.name, product)
     product.stock += 1
 
   end
